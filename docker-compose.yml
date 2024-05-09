@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  server:
+    build: .
+    # init:true is necessary to forward signals to our script https://docs.docker.com/reference/cli/docker/container/run/
+    init: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
